@@ -6,7 +6,7 @@ import io
 def main():
     # Título de la aplicación
     st.title("Generador de Ilustraciones para Cuentos Infantiles")
-    st.write("Ingresa una descripción de la escena y genera una ilustración en estilo tinta china.")
+    st.write("Ingresa una descripción de la escena y genera una ilustración en estilo rico a lápiz.")
 
     # Entrada de texto para la descripción de la escena
     scene = st.text_input("Descripción de la escena:")
@@ -31,7 +31,7 @@ def main():
                 }
 
                 # Crear el prompt incluyendo el estilo deseado
-                prompt = f"{scene}, en estilo tinta china"
+                prompt = f"{scene}, en estilo rico a lápiz"
 
                 # Datos de la solicitud
                 data = {
