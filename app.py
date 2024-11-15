@@ -6,7 +6,7 @@ import io
 def main():
     # Título de la aplicación
     st.title("Generador de Ilustraciones para Cuentos Infantiles")
-    st.write("Ingresa una descripción de la escena y genera una ilustración en estilo rico a lápiz.")
+    st.write("Ingresa una descripción de la escena y genera una ilustración en estilo a lápiz, en blanco y negro, con mucho detalle.")
 
     # Entrada de texto para la descripción de la escena
     scene = st.text_input("Descripción de la escena:")
@@ -31,7 +31,7 @@ def main():
                 }
 
                 # Crear el prompt incluyendo el estilo deseado
-                prompt = f"{scene}, en estilo rico a lápiz"
+                prompt = f"{scene}, a lápiz, en blanco y negro, con mucho detalle"
 
                 # Datos de la solicitud
                 data = {
@@ -39,7 +39,7 @@ def main():
                     "prompt": prompt,
                     "width": 512,
                     "height": 512,
-                    "steps": 4,
+                    "steps": 50,  # Aumentado para mayor detalle
                     "n": 1,
                     "response_format": "b64_json"
                 }
