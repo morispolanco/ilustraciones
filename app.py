@@ -26,8 +26,8 @@ def generate_illustration(prompt):
     data = {
         "model": "black-forest-labs/FLUX.1-schnell-Free",
         "prompt": prompt,
-        "width": 544,
-        "height": 544,
+        "width": 512,
+        "height": 512,
         "steps": 4,  # Adjust for desired image quality (higher = better, slower)
         "n": 1,
         "response_format": "b64_json",
