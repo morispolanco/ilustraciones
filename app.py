@@ -19,7 +19,7 @@ def main():
             with st.spinner("Generando la ilustración..."):
                 # Obtener la clave de API de los secretos de Streamlit
                 try:
-                    api_key = st.secrets["TOGETHER_API_KEY"]
+                    api_key = st.secrets["OPENROUTER_API_KEY"]
                 except KeyError:
                     st.error("Clave de API no encontrada. Asegúrate de haber configurado los secretos correctamente.")
                     return
@@ -35,7 +35,7 @@ def main():
 
                 # Datos de la solicitud
                 data = {
-                    "model": "black-forest-labs/FLUX.1-schnell-Free",
+                    "model": "meta-llama/llama-3.2-90b-vision-instruct:free",
                     "prompt": prompt,
                     "width": 512,
                     "height": 512,
@@ -45,9 +45,9 @@ def main():
                 }
 
                 try:
-                    # Realizar la solicitud POST a la API
+                    # Realizar la solicitud POST a la API de OpenRouter
                     response = requests.post(
-                        "https://api.together.xyz/v1/images/generations",
+                        "https://openrouter.ai/api/v1/images/generations",
                         headers=headers,
                         json=data
                     )
